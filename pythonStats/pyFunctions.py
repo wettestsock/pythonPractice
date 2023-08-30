@@ -29,11 +29,10 @@ def MTestPRaw(data1, comparison, data2, alpha=0.05):
         print("This is not a paired t-test because the sample size is different.\n Consider using a 2 sample t test instead.\n")
         return
     
-    diff = []
-    for i, x in zip(data1, data2):
-        diff.append(i-x)
-        
-    MTestPData(npy.mean(diff), m.sqrt(npy.var(data1) + npy.var(data2)), comparison, len(data1), alpha)
+    difference = []
+    
+    
+    
 
 def MTestPData(SmeanDiff, stdDiff, comparison, n, alpha = 0.05):
     SE = stdDiff/m.sqrt(n)
@@ -209,8 +208,8 @@ data1 = [85, 90, 94, 89, 90, 93, 95, 96, 92, 93, 93 ,95]
 data2 = [13.3, 6.0, 20.0, 8.0, 14.0, 19.0, 18.0, 25.0, 16.0, 24.0, 15.0, 1.0, 15.0]
 data3 = [22.0, 16.0, 21.7, 21.0, 30.0, 26.0, 12.0, 23.2, 28.0, 23.0]
 data4 = [14, 15, 15, 15, 16, 18, 22, 23, 24, 25, 25]
-data5 = [10, 12, 14, 15, 18, 22, 24, 27, 31, 33, 34]
-data6 = [10, 12, 14, 15, 18, 22, 24, 27, 31, 33, 34, 34, 34]
+data5 = [14, 15, 15, 15, 16, 18, 22, 23, 24, 25, 25]
+data6 = [10, 12, 14, 15, 18, 22, 24, 27, 31, 33, 34, 34]
   
 VIntervalRaw(data1, 0.95) # (4.4711, 25.6849)
 MIntervalRaw(data1, 0.95) # (90.3945, 93.7722)
@@ -220,5 +219,4 @@ MTest2SData(300,18.5,40,"!=",305,16.7,38) # SE: 3.9869, t: -1.2541, p: 0.2137, a
 MTest2SData(252, 28, 20, "!=", 187,32,24)
 MTest2SRaw(data4, "!=", data6)
 
-MTestPRaw(data4, "!=", data5)
-
+MTestPRaw(data1, "!=", data6)
