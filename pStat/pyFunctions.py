@@ -1,4 +1,5 @@
-from tkinter import Scale
+import pandas as pd
+import matplotlib.pyplot as plt
 import scipy.stats as stats 
 import numpy as npy #has : 
     #npy.mean (mean) 
@@ -220,3 +221,4 @@ MTest2SData(252, 28, 20, "!=", 187,32,24)
 MTest2SRaw(data4, "!=", data6)
 
 MTestPRaw(data1, "!=", data6)
+
