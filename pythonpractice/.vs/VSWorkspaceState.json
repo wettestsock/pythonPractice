@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\testFolder"
   ],
-  "SelectedNode": "\\main.py",
+  "SelectedNode": "\\classes.py",
   "PreviewInSolutionExplorer": false
 }
